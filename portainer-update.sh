@@ -17,4 +17,7 @@ docker run -d -p 8000:8000 -p 9443:9443 \
   -v portainer_data:/data \
   portainer/portainer-ce:latest
 
-echo "Portainer has been updated!"
+echo "Cleaning up unused Docker images..."
+docker image prune -f
+
+echo "Portainer update and cleanup complete!"
